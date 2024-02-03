@@ -1,7 +1,7 @@
 {
-  "name": "softgames-test-tasks",
+  "name": "typescript_technical_test",
   "version": "1.0.0",
-  "repository": "",
+  "repository": "https://github.com/jeth88/typescript_technical_test.git",
   "author": "Jethro Sas",
   "license": "UNLICENSED",
   "scripts": {

@@ -1,0 +1,1 @@
+{"version":3,"file":"bundle.css","mappings":"AAAA,KACE,qBACF,CAEA,iBAEE,kBAAmB,CADnB,YAAa,CAEb,sBACF","sources":["webpack://typescript_technical_test/./src/index.css"],"sourcesContent":["body {\r\n  background-color: #fff;\r\n}\r\n\r\n#canvasContainer {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n"],"names":[],"sourceRoot":""}
