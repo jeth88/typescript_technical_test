@@ -20,6 +20,7 @@ export class SceneController {
   constructor(window: Window) {
     this._app = new Application({
       autoDensity: true,
+      backgroundColor: '#F5842D',
       width: document.documentElement.clientWidth,
       height: document.documentElement.clientHeight,
       resolution: window.devicePixelRatio || 1,
@@ -70,7 +71,7 @@ export class SceneController {
       const yScale = clientHeight / gameHeight;
 
       const scale = Math.min(xScale, yScale);
-      const xOffset = (clientWidth - gameWidth * scale) / 2;
+      const xOffset = clientWidth / 2;
       const yOffset = (clientHeight - gameHeight * scale) / 2;
 
       this._currentScene.setScale(scale);

@@ -1,10 +1,9 @@
 import { Container, IPointData, Sprite, Text } from 'pixi.js';
 import {
-  COMMON_GAME_TEXT_STYLE,
   COMMON_HEADER_TEXT_STYLE,
+  RANDOM_TEXT_STYLE,
 } from '../config/commonConfig';
 import { SceneController } from '../controller/SceneController';
-import { ITextTransform } from '../interface/ITextTransform';
 import { HelperUtil } from '../util/HelperUtil';
 import { TaskScene } from './TaskScene';
 
@@ -41,11 +40,13 @@ export class Task2Scene extends TaskScene {
     return new Promise((resolve: Function) => {
       super.onStart(parentCnt);
       const gameText = HelperUtil.createStaticText(
-        Object.assign({}, COMMON_HEADER_TEXT_STYLE, {
+        'RANDOM OBJECTS GAME',
+        COMMON_HEADER_TEXT_STYLE,
+        {
+          anchorX: 0.5,
           positionX: this.POS_X,
-          positionY: 50,
-          text: 'RANDOM OBJECTS GAME',
-        } as ITextTransform),
+          positionY: 100,
+        },
       );
       const backMenuText = this.getBackMenuText();
 
@@ -69,7 +70,7 @@ export class Task2Scene extends TaskScene {
 
     gameCnt.addChild(firstRandomObject, secondRandomObject, thirdRandomObject);
     gameCnt.position.x = this.POS_X;
-    gameCnt.position.y = 200;
+    gameCnt.position.y = 240;
     this._objects.push(
       firstRandomObject,
       secondRandomObject,
@@ -91,10 +92,13 @@ export class Task2Scene extends TaskScene {
   private getRandomText(): Text {
     const randomIdx = this.getRandomIdxByParam(this._activityNames.length);
     const text = HelperUtil.createStaticText(
-      Object.assign({}, COMMON_GAME_TEXT_STYLE, {
+      this._activityNames[randomIdx],
+      Object.assign({}, RANDOM_TEXT_STYLE, {
         fontSize: this._fontSizes[randomIdx],
-        text: this._activityNames[randomIdx],
-      } as ITextTransform),
+      }),
+      {
+        anchorX: 0.5,
+      },
     );
     return text;
   }

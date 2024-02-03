@@ -1,10 +1,9 @@
 import { Container } from 'pixi.js';
 import {
-  COMMON_GAME_TEXT_STYLE,
+  MENU_TEXT_STYLE,
   COMMON_HEADER_TEXT_STYLE,
 } from '../config/commonConfig';
 import { TEXT_MENU } from '../constant/gameConstant';
-import { ITextTransform } from '../interface/ITextTransform';
 import { HelperUtil } from '../util/HelperUtil';
 import { Scene } from './Scene';
 import { Task1Scene } from './Task1Scene';
@@ -22,34 +21,42 @@ export class MenuScene extends Scene {
 
   private setupTexts(): void {
     const menuText = HelperUtil.createStaticText(
-      Object.assign({}, COMMON_HEADER_TEXT_STYLE, {
+      'GAME MENU',
+      COMMON_HEADER_TEXT_STYLE,
+      {
+        anchorX: 0.5,
         positionX: this.POS_X,
-        positionY: 50,
-        text: 'GAME MENU',
-      } as ITextTransform),
+        positionY: 100,
+      },
     );
     const game1Text = HelperUtil.createInteractiveText(
-      Object.assign({}, COMMON_GAME_TEXT_STYLE, {
+      'CARD DECK GAME',
+      MENU_TEXT_STYLE,
+      {
+        anchorX: 0.5,
         positionX: this.POS_X,
-        positionY: 200,
-        text: 'CARD DECK GAME',
-      } as ITextTransform),
+        positionY: 250,
+      },
       () => this.getCallBackFunc(TEXT_MENU.card),
     );
     const game2Text = HelperUtil.createInteractiveText(
-      Object.assign({}, COMMON_GAME_TEXT_STYLE, {
+      'RANDOM OBJECTS GAME',
+      MENU_TEXT_STYLE,
+      {
+        anchorX: 0.5,
         positionX: this.POS_X,
-        positionY: 300,
-        text: 'RANDOM OBJECTS GAME',
-      } as ITextTransform),
+        positionY: 350,
+      },
       () => this.getCallBackFunc(TEXT_MENU.random),
     );
     const game3Text = HelperUtil.createInteractiveText(
-      Object.assign({}, COMMON_GAME_TEXT_STYLE, {
+      'FLAME EFFECT GAME',
+      MENU_TEXT_STYLE,
+      {
+        anchorX: 0.5,
         positionX: this.POS_X,
-        positionY: 400,
-        text: 'FLAME EFFECT GAME',
-      } as ITextTransform),
+        positionY: 450,
+      },
       () => this.getCallBackFunc(TEXT_MENU.flame),
     );
 

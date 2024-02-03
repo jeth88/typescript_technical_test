@@ -2,7 +2,6 @@ import { Emitter } from '@pixi/particle-emitter';
 import { Container } from 'pixi.js';
 import { COMMON_HEADER_TEXT_STYLE } from '../config/commonConfig';
 import { SceneController } from '../controller/SceneController';
-import { ITextTransform } from '../interface/ITextTransform';
 import { HelperUtil } from '../util/HelperUtil';
 import * as flameJson from './../particles/blueFlame.json';
 import { TaskScene } from './TaskScene';
@@ -21,11 +20,13 @@ export class Task3Scene extends TaskScene {
     return new Promise((resolve: Function) => {
       super.onStart(parentCnt);
       const gameText = HelperUtil.createStaticText(
-        Object.assign({}, COMMON_HEADER_TEXT_STYLE, {
+        'FLAME EFFECT GAME',
+        COMMON_HEADER_TEXT_STYLE,
+        {
+          anchorX: 0.5,
           positionX: this.POS_X,
-          positionY: 50,
-          text: 'FLAME EFFECT GAME',
-        } as ITextTransform),
+          positionY: 100,
+        },
       );
       const backMenuText = this.getBackMenuText();
 
@@ -38,7 +39,7 @@ export class Task3Scene extends TaskScene {
   private setupParticlesAndPlay(): void {
     this._particleContainer = this._parentCnt.addChild(new Container());
     this._particleContainer.x = this.POS_X;
-    this._particleContainer.y = 600;
+    this._particleContainer.y = 670;
 
     this._emitter = new Emitter(this._particleContainer, flameJson);
     this._emitter.emit = true;

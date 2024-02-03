@@ -1,9 +1,9 @@
-import { Application, Container, IPointData } from 'pixi.js';
+import { Application, Container, Graphics, IPointData } from 'pixi.js';
 import { TEXT_MENU } from '../constant/gameConstant';
 import { SceneController } from '../controller/SceneController';
 
 export class Scene {
-  protected readonly POS_X: number = 550;
+  protected readonly POS_X: number = 0;
 
   protected _parentCnt!: Container;
   private _sceneController!: SceneController;
@@ -30,6 +30,9 @@ export class Scene {
 
   public onStart(parentCnt: Container): Promise<void> {
     this._parentCnt = parentCnt;
+    const bg: Graphics = this._parentCnt.addChild(new Graphics());
+    bg.beginFill('#FFE5B4');
+    bg.drawRect(-250, 190, 500, 500);
     return Promise.resolve();
   }
 

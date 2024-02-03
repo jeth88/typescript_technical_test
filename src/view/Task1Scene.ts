@@ -5,7 +5,6 @@ import {
   COMMON_HEADER_TEXT_STYLE,
 } from '../config/commonConfig';
 import { SceneController } from '../controller/SceneController';
-import { ITextTransform } from '../interface/ITextTransform';
 import { HelperUtil } from '../util/HelperUtil';
 import { TaskScene } from './TaskScene';
 
@@ -33,19 +32,22 @@ export class Task1Scene extends TaskScene {
     return new Promise((resolve: Function) => {
       super.onStart(parentCnt);
       const gameText = HelperUtil.createStaticText(
-        Object.assign({}, COMMON_HEADER_TEXT_STYLE, {
+        'CARD DECK GAME',
+        COMMON_HEADER_TEXT_STYLE,
+        {
+          anchorX: 0.5,
           positionX: this.POS_X,
-          positionY: 50,
-          text: 'CARD DECK GAME',
-        } as ITextTransform),
+          positionY: 100,
+        },
       );
       this._fpsText = HelperUtil.createStaticText(
-        Object.assign({}, COMMON_GAME_TEXT_STYLE, {
-          anchorX: 0,
-          positionX: 30,
+        'FPS: 0',
+        COMMON_GAME_TEXT_STYLE,
+        {
+          anchorX: 0.5,
+          positionX: 0,
           positionY: 20,
-          text: 'FPS: 0',
-        } as ITextTransform),
+        },
       );
       const backMenuText = this.getBackMenuText();
 
@@ -73,7 +75,7 @@ export class Task1Scene extends TaskScene {
     const gameCnt = this._parentCnt.addChild(new Container());
     gameCnt.addChild(this._rightDeckCnt, this._leftDeckCnt);
     gameCnt.position.x = this.POS_X;
-    gameCnt.position.y = 280;
+    gameCnt.position.y = 330;
 
     const cardImgSrc = './img/cardDown.jpg';
     for (let i = 0; i < this.MAX_CARDS; i++) {
