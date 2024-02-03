@@ -75,7 +75,7 @@ export class Task1Scene extends TaskScene {
     gameCnt.position.x = this.POS_X;
     gameCnt.position.y = 280;
 
-    const cardImgSrc = './../img/cardDown.jpg';
+    const cardImgSrc = './img/cardDown.jpg';
     for (let i = 0; i < this.MAX_CARDS; i++) {
       const sprite = Sprite.from(cardImgSrc);
       sprite.scale.set(0.5);

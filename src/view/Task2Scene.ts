@@ -21,11 +21,11 @@ export class Task2Scene extends TaskScene {
   ];
 
   private readonly _textureImages: string[] = [
-    './../img/bat.jpg',
-    './../img/bee.jpg',
-    './../img/cat.jpg',
-    './../img/heart.jpg',
-    './../img/snowman.jpg',
+    './img/bat.jpg',
+    './img/bee.jpg',
+    './img/cat.jpg',
+    './img/heart.jpg',
+    './img/snowman.jpg',
   ];
 
   private _objects!: Array<Text | Sprite>;
