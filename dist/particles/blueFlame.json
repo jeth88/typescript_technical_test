@@ -85,7 +85,7 @@
     {
       "type": "textureRandom",
       "config": {
-        "textures": ["./../img/particle.png", "./../img/Fire.png"]
+        "textures": ["./img/particle.png", "./img/Fire.png"]
       }
     },
     {
